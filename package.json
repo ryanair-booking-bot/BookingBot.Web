@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "watch": "./node_modules/watchify/bin/cmd.js ./public/js/main.js -o ./public/index.bundle.js -v -d -t [ babelify --presets [ es2015 ] ]"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,18 @@
   },
   "homepage": "https://github.com/ryanair-booking-bot/BookingBot.Web#readme",
   "dependencies": {
+    "alexa-voice-service": "0.0.7",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
     "express": "^4.15.2",
-    "morgan": "^1.8.1"
+    "http-message-parser": "0.0.23",
+    "morgan": "^1.8.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "watchify": "^3.9.0"
   }
 }
