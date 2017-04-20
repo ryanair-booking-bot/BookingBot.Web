@@ -13,6 +13,6 @@ npm install
 npm run watch
 npm start
 ```
-After the second command you need to wait till it create `index.bundle.js` file.
+After the second command you need to wait till it creates `index.bundle.js` file.
 
 Now you should be able to access the web application under the https://localhost:3000.
