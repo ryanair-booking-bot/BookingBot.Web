@@ -11,17 +11,9 @@ window.avs = avs
 
 avs.on(AVS.EventTypes.TOKEN_INVALID, () => {
   avs.logout()
+    .then(login)
 })
 
-avs.on(AVS.EventTypes.LOGIN, () => {
-  record.disabled = false
-})
-
-avs.on(AVS.EventTypes.LOGOUT, () => {
-  record.disabled = true
-})
-
-const loginBtn = document.getElementById('plane')
 const record = document.getElementById('start-booking')
 
 avs.getTokenFromUrl()
@@ -37,12 +29,10 @@ avs.getTokenFromUrl()
   }
 })
 
-loginBtn.addEventListener('click', login)
-
 function login() {
   return avs.login()
   .then(() => avs.requestMic())
-  .catch(() => {})
+  .catch(() => {});
 }
 
 record.addEventListener('mousedown', () => {
@@ -51,12 +41,6 @@ record.addEventListener('mousedown', () => {
 
 record.addEventListener('mouseup', () => {
   avs.stopRecording().then(dataView => {
-    avs.player.emptyQueue()
-    .then(() => avs.audioToBlob(dataView))
-    .catch(error => {
-      console.error(error)
-    })
-
     avs.sendAudio(dataView)
     .then(({xhr, response}) => {
 
@@ -135,11 +119,6 @@ record.addEventListener('mouseup', () => {
                   xhr.send()
                 }
               })
-            } else if (directive.namespace === 'SpeechRecognizer') {
-              if (directive.name === 'listen') {
-                const timeout = directive.payload.timeoutIntervalInMillis
-                // enable mic
-              }
             }
           }
         })

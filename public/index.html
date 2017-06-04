@@ -15,67 +15,30 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
-                padding-top: 50px;
-                padding-bottom: 20px;
+                background: url('img/bg.png') no-repeat center center;
+                background-size: cover;
+                width: 100%;
+                height: 100vh;
+            }
+
+            #start-booking {
+                margin: 38vh 0 0 55vw;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <script src="https://use.fontawesome.com/a4628859e0.js"></script>
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
+      <div class="content">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-              <img src="/tile.png" class="img-circle" alt="logo"> Ryanair Booking Bot
-            </a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://github.com/ryanair-booking-bot">GitHub</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div><!--/.navbar-collapse -->
-        </div>
-      </nav>
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1>Welcome to Ryanair booking system</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet lectus euismod orci hendrerit elementum. Nunc in velit vehicula, porta est vitae, finibus nulla. Proin id mattis elit, sit amet tempor dui.</p>
-        </div>
+        <button class="btn btn-lg btn-default" id="start-booking"><i class="fa fa-2x fa-microphone" aria-hidden="true"></i></button>
       </div>
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="text-center">
-            <h2>Where do you want to fly? <span class="glyphicon glyphicon-plane" id="plane"></span></h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><button class="btn btn-lg btn-default" id="start-booking" disabled>Click to start <span class="glyphicon glyphicon-comment"></span></button></p>
-          </div>
-        </div>
-
-        <hr>
-
-        <footer>
-          <p>&copy; Ryanair 2017</p>
-        </footer>
-      </div> <!-- /container -->        
-      
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
       <script src="js/vendor/bootstrap.min.js"></script>
